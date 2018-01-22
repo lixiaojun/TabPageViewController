@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         option.tabBottomSpacing = 4.0
         option.tabLeftSpacing = 8.0
         option.currentBarWidth = 0.0 //current bar width fit itemlabel's width
+        option.currentBarWidthOffset = 6.0
         
         tc.option = option
         navigationController?.pushViewController(tc, animated: true)

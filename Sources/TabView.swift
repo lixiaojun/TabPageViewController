@@ -200,11 +200,18 @@ extension TabView {
     
     func updateCurrentBarWidth(cell: TabCollectionCell) {
         if let width = option.currentBarWidth {
-            if width > 0.0 {
-                currentBarStyleViewWidthConstraint?.constant = width
+            let offset = option.currentBarWidthOffset
+            var constant: CGFloat = 0.0
+            if width == 0.0 {
+                constant = cell.labelWidth + 2 * offset
             } else {
-                currentBarStyleViewWidthConstraint?.constant = cell.labelWidth
+                constant = width + 2 * offset
             }
+            
+            if constant < 0 {
+                constant = cell.frame.size.width
+            }
+            currentBarStyleViewWidthConstraint?.constant = constant
         }
     }
 

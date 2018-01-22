@@ -28,6 +28,7 @@ public struct TabPageOption {
     public var tabBottomSpacing: CGFloat = 0.0
     public var tabLeftSpacing: CGFloat = 0.0
     public var currentBarWidth: CGFloat?
+    public var currentBarWidthOffset: CGFloat = 0.0
     public var currentBarHeight: CGFloat = 2.0
     public var tabBackgroundColor: UIColor = .white
     public var pageBackgoundColor: UIColor = UIColor.white

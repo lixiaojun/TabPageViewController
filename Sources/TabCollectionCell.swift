@@ -44,7 +44,6 @@ class TabCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
 
         currentBarView.isHidden = true
-        itemLabel.backgroundColor = UIColor.red
     }
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
