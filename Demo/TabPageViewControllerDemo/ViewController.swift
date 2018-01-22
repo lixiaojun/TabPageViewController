@@ -28,8 +28,14 @@ class ViewController: UIViewController {
         let vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListViewController")
         tc.tabItems = [(vc1, "First"), (vc2, "Second")]
         var option = TabPageOption()
-        option.tabWidth = view.frame.width / CGFloat(tc.tabItems.count)
-        option.hidesTopViewOnSwipeType = .all
+        option.hidesTopViewOnSwipeType = .tabBar
+        option.isTranslucent = false
+        option.tabBackgroundColor = UIColor.yellow
+        option.pageBackgoundColor = UIColor.blue
+        option.currentBarHeight = 3.0
+        option.tabBottomSpacing = 4.0
+        option.tabLeftSpacing = 8.0
+        
         tc.option = option
         navigationController?.pushViewController(tc, animated: true)
     }

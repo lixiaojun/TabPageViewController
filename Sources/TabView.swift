@@ -35,10 +35,12 @@ internal class TabView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     @IBOutlet fileprivate weak var currentBarView: UIView!
+    @IBOutlet fileprivate weak var currentBarStyleView: UIView!
     @IBOutlet fileprivate weak var currentBarViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet fileprivate weak var currentBarViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet fileprivate weak var bottomBarViewHeightConstraint: NSLayoutConstraint!
-
+    @IBOutlet fileprivate weak var collectionViewLeadingConstraint: NSLayoutConstraint!
+    
     init(isInfinity: Bool, option: TabPageOption) {
        super.init(frame: CGRect.zero)
         self.option = option
@@ -69,7 +71,7 @@ internal class TabView: UIView {
             toItem: contentView,
             attribute: .bottom,
             multiplier: 1.0,
-            constant: 0.0)
+            constant: option.tabBottomSpacing * -1.0)
 
         let right = NSLayoutConstraint(item: self,
             attribute: .trailing,
@@ -88,8 +90,9 @@ internal class TabView: UIView {
         cellForSize = nib.instantiate(withOwner: nil, options: nil).first as! TabCollectionCell
 
         collectionView.scrollsToTop = false
+        collectionViewLeadingConstraint.constant = option.tabLeftSpacing
 
-        currentBarView.backgroundColor = option.currentColor
+        currentBarStyleView.backgroundColor = option.currentColor
         currentBarViewHeightConstraint.constant = option.currentBarHeight
         if !isInfinity {
             currentBarView.removeFromSuperview()

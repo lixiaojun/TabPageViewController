@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,7 +13,9 @@
             <connections>
                 <outlet property="bottomBarViewHeightConstraint" destination="Nhe-bO-iAA" id="nBt-ET-PoO"/>
                 <outlet property="collectionView" destination="Xf0-gn-U1c" id="nmM-7j-unw"/>
+                <outlet property="collectionViewLeadingConstraint" destination="k7q-kD-VGm" id="KyB-yL-Osm"/>
                 <outlet property="contentView" destination="ht5-fO-CtR" id="UEk-E7-6ts"/>
+                <outlet property="currentBarStyleView" destination="xeL-Zs-I8Z" id="tUZ-Ej-fby"/>
                 <outlet property="currentBarView" destination="pCA-AJ-Zrg" id="g8t-Py-ZPA"/>
                 <outlet property="currentBarViewHeightConstraint" destination="M76-sL-SLw" id="cj7-Ju-pz2"/>
                 <outlet property="currentBarViewWidthConstraint" destination="TzL-4E-b4p" id="RRO-7B-4Qd"/>
@@ -47,10 +49,19 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCA-AJ-Zrg">
                     <rect key="frame" x="110" y="78" width="100" height="2"/>
-                    <color key="backgroundColor" red="0.41176470588235292" green="0.71372549019607845" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeL-Zs-I8Z" userLabel="Show View">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="2"/>
+                            <color key="backgroundColor" red="0.41176470590000003" green="0.71372549019999998" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                    </subviews>
                     <constraints>
+                        <constraint firstItem="xeL-Zs-I8Z" firstAttribute="top" secondItem="pCA-AJ-Zrg" secondAttribute="top" id="0Wp-4n-YgT"/>
                         <constraint firstAttribute="height" constant="2" id="M76-sL-SLw"/>
                         <constraint firstAttribute="width" constant="100" id="TzL-4E-b4p"/>
+                        <constraint firstAttribute="bottom" secondItem="xeL-Zs-I8Z" secondAttribute="bottom" id="U6K-hg-id4"/>
+                        <constraint firstItem="xeL-Zs-I8Z" firstAttribute="centerX" secondItem="pCA-AJ-Zrg" secondAttribute="centerX" id="eaU-yy-gUC"/>
+                        <constraint firstItem="xeL-Zs-I8Z" firstAttribute="width" secondItem="pCA-AJ-Zrg" secondAttribute="width" id="lGu-rh-qJQ"/>
                     </constraints>
                 </view>
             </subviews>
