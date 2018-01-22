@@ -41,6 +41,8 @@ internal class TabView: UIView {
     @IBOutlet fileprivate weak var bottomBarViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet fileprivate weak var collectionViewLeadingConstraint: NSLayoutConstraint!
     
+    var currentBarStyleViewWidthConstraint: NSLayoutConstraint?
+    
     init(isInfinity: Bool, option: TabPageOption) {
        super.init(frame: CGRect.zero)
         self.option = option
@@ -118,6 +120,13 @@ internal class TabView: UIView {
         }
 
         bottomBarViewHeightConstraint.constant = 1.0 / UIScreen.main.scale
+    
+        if option.currentBarWidth != nil {
+            currentBarStyleViewWidthConstraint = NSLayoutConstraint(item: currentBarStyleView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 0.0)
+            currentBarStyleViewWidthConstraint!.priority = .required
+            currentBarStyleView.addConstraint(currentBarStyleViewWidthConstraint!)
+        }
+    
     }
 
     required internal init?(coder aDecoder: NSCoder) {
@@ -184,6 +193,18 @@ extension TabView {
                 }
             }
             currentBarViewWidthConstraint.constant = currentBarViewWidth + width
+            updateCurrentBarWidth(cell: currentCell)
+            
+        }
+    }
+    
+    func updateCurrentBarWidth(cell: TabCollectionCell) {
+        if let width = option.currentBarWidth {
+            if width > 0.0 {
+                currentBarStyleViewWidthConstraint?.constant = width
+            } else {
+                currentBarStyleViewWidthConstraint?.constant = cell.labelWidth
+            }
         }
     }
 
@@ -249,6 +270,7 @@ extension TabView {
             }
             cell.hideCurrentBarView()
             currentBarViewWidthConstraint.constant = cell.frame.width
+            updateCurrentBarWidth(cell: cell)
             if !isInfinity {
                 currentBarViewLeftConstraint?.constant = cell.frame.origin.x
             }

@@ -44,6 +44,7 @@ class TabCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
 
         currentBarView.isHidden = true
+        itemLabel.backgroundColor = UIColor.red
     }
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -73,6 +74,10 @@ extension TabCollectionCell {
 
         let size = CGSize(width: width, height: option.tabHeight)
         return size
+    }
+    
+    var labelWidth: CGFloat {
+        return itemLabel.intrinsicContentSize.width
     }
 
     func hideCurrentBarView() {
