@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         let vc1 = UIViewController()
         vc1.view.backgroundColor = UIColor.white
         let vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListViewController")
-        tc.tabItems = [(vc1, "First"), (vc2, "Second")]
+        tc.tabItems = [(vc1, "第一个"), (vc2, "Second")]
         var option = TabPageOption()
         option.hidesTopViewOnSwipeType = .tabBar
         option.isTranslucent = false
@@ -34,7 +34,10 @@ class ViewController: UIViewController {
         option.pageBackgoundColor = UIColor.blue
         option.currentBarHeight = 3.0
         option.tabBottomSpacing = 4.0
-        option.tabLeftSpacing = 8.0
+        option.tabLeftSpacing = 4.0
+        option.tabMargin = 12.0
+        option.fontSize = 13
+        option.tabHeight = 24
         option.currentBarWidth = 0.0 //current bar width fit itemlabel's width
         option.currentBarWidthOffset = 6.0
         

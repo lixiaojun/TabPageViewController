@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWJ-4f-Lz7">
-                        <rect key="frame" x="59" y="17" width="33" height="16"/>
+                        <rect key="frame" x="59" y="0.0" width="33" height="16"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,13 +42,13 @@
             </view>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="IWJ-4f-Lz7" firstAttribute="top" secondItem="Njo-bq-MVA" secondAttribute="top" id="4kK-yK-iER"/>
                 <constraint firstItem="Sgu-AL-NbW" firstAttribute="leading" secondItem="Njo-bq-MVA" secondAttribute="leading" priority="750" id="8A5-j1-wap"/>
-                <constraint firstItem="IWJ-4f-Lz7" firstAttribute="centerX" secondItem="Njo-bq-MVA" secondAttribute="centerX" id="FgI-gv-iu2"/>
                 <constraint firstItem="Sgu-AL-NbW" firstAttribute="top" secondItem="Njo-bq-MVA" secondAttribute="top" priority="750" id="IJz-mm-YfC"/>
                 <constraint firstAttribute="bottom" secondItem="UkM-Ly-JBr" secondAttribute="bottom" id="J0J-D8-GeH"/>
                 <constraint firstItem="UkM-Ly-JBr" firstAttribute="width" secondItem="Njo-bq-MVA" secondAttribute="width" id="JX5-WR-Cu9"/>
-                <constraint firstItem="IWJ-4f-Lz7" firstAttribute="centerY" secondItem="Njo-bq-MVA" secondAttribute="centerY" id="YZv-VV-EQn"/>
                 <constraint firstItem="UkM-Ly-JBr" firstAttribute="centerX" secondItem="Njo-bq-MVA" secondAttribute="centerX" id="aag-kb-9Jz"/>
+                <constraint firstItem="IWJ-4f-Lz7" firstAttribute="centerX" secondItem="Njo-bq-MVA" secondAttribute="centerX" id="eUl-24-R8v"/>
                 <constraint firstAttribute="trailing" secondItem="Sgu-AL-NbW" secondAttribute="trailing" priority="750" id="mA5-Ef-SrJ"/>
             </constraints>
             <size key="customSize" width="151" height="50"/>
