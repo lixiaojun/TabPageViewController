@@ -15,6 +15,11 @@ public enum HidesTopContentsOnSwipeType {
     case all
 }
 
+public enum TabTextAlignment {
+    case top
+    case center
+}
+
 public struct TabPageOption {
 
     public init() {}
@@ -34,6 +39,7 @@ public struct TabPageOption {
     public var pageBackgoundColor: UIColor = UIColor.white
     public var isTranslucent: Bool = true
     public var hidesTopViewOnSwipeType: HidesTopContentsOnSwipeType = .none
+    public var tabTextAlignment: TabTextAlignment = .center
 
     internal var tabBarAlpha: CGFloat {
         return isTranslucent ? 0.95 : 1.0

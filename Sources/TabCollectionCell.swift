@@ -14,6 +14,10 @@ class TabCollectionCell: UICollectionViewCell {
     var option: TabPageOption = TabPageOption() {
         didSet {
             currentBarViewHeightConstraint.constant = option.currentBarHeight
+            if option.tabTextAlignment == .top {
+                NSLayoutConstraint.deactivate([textLabelCenterYConstraint])
+            }
+            
         }
     }
     var item: String = "" {
@@ -39,6 +43,7 @@ class TabCollectionCell: UICollectionViewCell {
     @IBOutlet fileprivate weak var itemLabel: UILabel!
     @IBOutlet fileprivate weak var currentBarView: UIView!
     @IBOutlet fileprivate weak var currentBarViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var textLabelCenterYConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()

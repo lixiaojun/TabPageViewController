@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         option.tabHeight = 24
         option.currentBarWidth = 0.0 //current bar width fit itemlabel's width
         option.currentBarWidthOffset = 6.0
+        option.tabTextAlignment = .top
         
         tc.option = option
         navigationController?.pushViewController(tc, animated: true)
